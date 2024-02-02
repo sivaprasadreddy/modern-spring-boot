@@ -1,0 +1,27 @@
+version: '3.8'
+name: 'modern-spring-boot'
+services:
+  bookstore:
+    image: sivaprasadreddy/modern-spring-boot
+    container_name: modern-spring-boot
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_DRIVER-CLASS-NAME: org.postgresql.Driver
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresdb:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    depends_on:
+      - postgresdb
+
+  postgresdb:
+    image: postgres:16-alpine
+    container_name: postgresdb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
