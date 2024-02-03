@@ -9,6 +9,8 @@ import org.springframework.web.service.annotation.PostExchange;
 
 import java.util.List;
 
+// https://jsonplaceholder.typicode.com/users
+
 public interface JsonPlaceHolderHttpClient {
     @GetExchange("/users")
     List<User> findAllUsers();

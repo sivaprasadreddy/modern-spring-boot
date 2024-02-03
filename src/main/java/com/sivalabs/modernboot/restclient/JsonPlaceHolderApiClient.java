@@ -10,6 +10,8 @@ import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
+// https://jsonplaceholder.typicode.com/users
+
 @Service
 public class JsonPlaceHolderApiClient {
     private final RestClient restClient;
@@ -19,11 +21,10 @@ public class JsonPlaceHolderApiClient {
     }
 
     public List<User> getAllUsers() {
-        RestClient restClient = RestClient.create("https://jsonplaceholder.typicode.com");
         return restClient.get()
                 .uri("/users")
                 .retrieve()
-                .body(new ParameterizedTypeReference<List<User>>() {});
+                .body(new ParameterizedTypeReference<>() {});
     }
 
     public User getUserById(int id) {

@@ -11,11 +11,13 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 public class HttpClientConfig {
 
     @Bean
-    JsonPlaceHolderHttpClient jsonPlaceholderService(@Value("${PLACEHOLDER_API_BASE_URI}") String baseURI) {
+    JsonPlaceHolderHttpClient jsonPlaceholderService(
+            @Value("${PLACEHOLDER_API_BASE_URI}") String baseURI) {
         RestClient restClient = RestClient.create(baseURI);
-        HttpServiceProxyFactory factory = HttpServiceProxyFactory
-                .builderFor(RestClientAdapter.create(restClient))
-                .build();
+        HttpServiceProxyFactory factory =
+                HttpServiceProxyFactory
+                        .builderFor(RestClientAdapter.create(restClient))
+                        .build();
         return factory.createClient(JsonPlaceHolderHttpClient.class);
     }
 }
