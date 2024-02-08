@@ -10,8 +10,8 @@ create table users
 (
     id       bigserial primary key,
     name     varchar,
-    username varchar,
-    email    varchar,
+    username varchar not null unique,
+    email    varchar not null unique,
     phone    varchar,
     website  varchar
 );
