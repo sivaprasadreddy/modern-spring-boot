@@ -12,7 +12,7 @@ public class HttpClientConfig {
 
     @Bean
     JsonPlaceHolderHttpClient jsonPlaceholderService(
-            @Value("${PLACEHOLDER_API_BASE_URI}") String baseURI) {
+            @Value("${placeholder_api_base_uri}") String baseURI) {
         RestClient restClient = RestClient.create(baseURI);
         HttpServiceProxyFactory factory =
                 HttpServiceProxyFactory

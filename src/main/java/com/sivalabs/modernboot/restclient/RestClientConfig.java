@@ -9,7 +9,7 @@ import org.springframework.web.client.RestClient;
 public class RestClientConfig {
 
     @Bean
-    RestClient restClient(@Value("${PLACEHOLDER_API_BASE_URI}") String baseURI) {
+    RestClient restClient(@Value("${placeholder_api_base_uri}") String baseURI) {
         return RestClient.create(baseURI);
     }
 }
