@@ -29,3 +29,14 @@ $ ./mvnw -Pnative spring-boot:build-image
 $ docker compose up --build -d
 $ docker compose logs -f
 ```
+
+## References
+* [Spring Boot Testcontainers Support](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing.testcontainers)
+* [Testcontainers](https://www.testcontainers.com/)
+* [Testcontainers Desktop](https://testcontainers.com/desktop/)
+* [Testcontainers Guides](https://testcontainers.com/guides/)
+* [JdbcClient Tutorial](https://www.sivalabs.in/spring-boot-jdbcclient-tutorial/)
+* [REST Clients](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html)
+* [RestClient](https://spring.io/blog/2023/07/13/new-in-spring-6-1-restclient)
+* [HTTP Interfaces](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface)
+* [GraalVM Native Image Support](https://docs.spring.io/spring-boot/docs/current/reference/html/native-image.html)
