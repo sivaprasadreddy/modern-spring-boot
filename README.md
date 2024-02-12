@@ -35,6 +35,7 @@ $ docker compose logs -f
 * [Testcontainers](https://www.testcontainers.com/)
 * [Testcontainers Desktop](https://testcontainers.com/desktop/)
 * [Testcontainers Guides](https://testcontainers.com/guides/)
+* [Testcontainers Best Practices](https://www.atomicjar.com/2023/11/testcontainers-best-practices/)
 * [JdbcClient Tutorial](https://www.sivalabs.in/spring-boot-jdbcclient-tutorial/)
 * [REST Clients](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html)
 * [RestClient](https://spring.io/blog/2023/07/13/new-in-spring-6-1-restclient)

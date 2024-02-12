@@ -1,7 +1,7 @@
 version: '3.8'
 name: 'modern-spring-boot'
 services:
-  bookstore:
+  modern-spring-boot:
     image: sivaprasadreddy/modern-spring-boot
     container_name: modern-spring-boot
     environment:
