@@ -35,7 +35,6 @@ class BookmarkControllerTests extends AbstractIntegrationTest {
                             "url":"https://test.com",
                             "description":"test bookmark"
                         }
-                        
                 """)
                 .when().post("/api/bookmarks")
                 .then()
@@ -52,7 +51,6 @@ class BookmarkControllerTests extends AbstractIntegrationTest {
                             "url":"https://test.com",
                             "description":"test bookmark"
                         }
-                        
                 """)
                 .when().put("/api/bookmarks/1")
                 .then()

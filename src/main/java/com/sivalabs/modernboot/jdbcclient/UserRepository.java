@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 class UserRepository {
     private final JdbcClient jdbcClient;
 
-    public UserRepository(JdbcClient jdbcClient) {
+    UserRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
 

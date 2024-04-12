@@ -16,11 +16,11 @@ public interface JsonPlaceHolderHttpClient {
     List<User> findAllUsers();
 
     @GetExchange("/users/{id}")
-    User findUserById(@PathVariable Integer id);
+    User findUserById(@PathVariable Long id);
 
     @PostExchange("/users")
     User createUser(@RequestBody User user);
 
     @DeleteExchange("/users/{id}")
-    void deleteUser(@PathVariable Integer id);
+    void deleteUser(@PathVariable Long id);
 }

@@ -1,7 +1,11 @@
 # Modern Spring Boot Application Development
 
-* Explore some new Java 17/21 features such as **Records**, **Text Blocks**, **Type Inference using var**, etc.
-* Build a sample Spring Boot application demonstrating the following features:
+* Explore some new Java 17/21 features such as:
+  * Records
+  * Text Blocks
+  * Type Inference using var
+  * Virtual Threads, etc
+* Spring Boot application demonstrating the following features:
   * Testcontainers Support
   * JdbcClient
   * RestClient
@@ -18,16 +22,17 @@ $ ./mvnw spring-boot:test-run
 
 ```shell
 $ ./mvnw spring-boot:build-image
-$ docker compose up --build -d
-$ docker compose logs -f
+$ docker compose -f complete-app.yml up --build -d
+$ docker compose -f complete-app.yml logs -f
 ```
 
 ## Run application using Docker Compose in GraalVM Native mode
 
 ```shell
 $ ./mvnw -Pnative spring-boot:build-image
-$ docker compose up --build -d
-$ docker compose logs -f
+$ docker compose -f complete-app.yml up --build -d
+$ docker compose -f complete-app.yml logs -f
+$ curl http://localhost:8080/api/bookmarks | jq .
 ```
 
 ## References

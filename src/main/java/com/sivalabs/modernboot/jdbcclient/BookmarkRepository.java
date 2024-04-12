@@ -19,7 +19,7 @@ import java.util.Optional;
 public class BookmarkRepository {
     private final JdbcClient jdbcClient;
 
-    public BookmarkRepository(JdbcClient jdbcClient) {
+    BookmarkRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
 

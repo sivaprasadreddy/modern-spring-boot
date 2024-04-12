@@ -29,12 +29,12 @@ class BookmarkController {
     }
 
     @GetMapping
-    public List<Bookmark> getAll() {
+    List<Bookmark> getAll() {
         return repository.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Bookmark> getById(@PathVariable Long id) {
+    ResponseEntity<Bookmark> getById(@PathVariable Long id) {
         return repository.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -42,13 +42,13 @@ class BookmarkController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void create(@RequestBody CreateBookmarkRequest bookmark) {
+    void create(@RequestBody CreateBookmarkRequest bookmark) {
         var b = new Bookmark(null, bookmark.title(), bookmark.url(), Instant.now());
         repository.save(b);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody UpdateBookmarkRequest request) {
+    ResponseEntity<Void> update(@PathVariable Long id, @RequestBody UpdateBookmarkRequest request) {
         var bookmark = repository.findById(id);
         if (bookmark.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -58,7 +58,7 @@ class BookmarkController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    void delete(@PathVariable Long id) {
         repository.delete(id);
     }
 }

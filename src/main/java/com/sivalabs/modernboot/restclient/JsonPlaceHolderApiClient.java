@@ -27,7 +27,7 @@ public class JsonPlaceHolderApiClient {
                 .body(new ParameterizedTypeReference<>() {});
     }
 
-    public User getUserById(int id) {
+    public User getUserById(long id) {
         return restClient.get()
                 .uri("/users/{id}", id)
                 .accept(APPLICATION_JSON)
@@ -44,7 +44,7 @@ public class JsonPlaceHolderApiClient {
                 .body(User.class);
     }
 
-    void deleteUser(Integer id) {
+    void deleteUser(long id) {
         restClient.delete()
                 .uri("/users/{id}", id)
                 .retrieve()
