@@ -1,11 +1,11 @@
 package com.sivalabs.modernboot.jdbcclient;
 
+import com.sivalabs.modernboot.ContainersConfig;
 import com.sivalabs.modernboot.models.Bookmark;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
-import org.springframework.jdbc.core.simple.JdbcClient;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.jdbc.Sql;
 
 import java.time.Instant;
@@ -14,22 +14,12 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@JdbcTest(properties = {
-   "spring.datasource.url=jdbc:tc:postgresql:16-alpine:///db",
-   "spring.test.database.replace=none",
-})
+@JdbcTest
+@Import({ContainersConfig.class, BookmarkRepository.class})
 @Sql("classpath:/test_data.sql")
 class BookmarkRepositoryTest {
-
     @Autowired
-    JdbcClient jdbcClient;
-
     BookmarkRepository bookmarkRepository;
-
-    @BeforeEach
-    void setUp() {
-        bookmarkRepository = new BookmarkRepository(jdbcClient);
-    }
 
     @Test
     void shouldFindAllBookmarks() {

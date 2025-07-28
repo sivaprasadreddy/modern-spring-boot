@@ -1,7 +1,7 @@
 package com.sivalabs.modernboot;
 
 import io.restassured.RestAssured;
-import org.junit.jupiter.api.BeforeEach;
+import jakarta.annotation.PostConstruct;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.context.annotation.Import;
@@ -14,7 +14,7 @@ public abstract class AbstractIntegrationTest {
     @LocalServerPort
     int port;
 
-    @BeforeEach
+    @PostConstruct
     void setUpBase() {
         RestAssured.port = port;
     }
